@@ -2,7 +2,10 @@ import bs4
 from bs4 import BeautifulSoup
 import json
 from collections import defaultdict
-tree=defaultdict(list)
+from dotdictify import dotdictify
+
+#tree=defaultdict(list)
+tree = dotdictify()
 soup = BeautifulSoup(open('test.html'))
 path=[]
 def recFunction(inp,i):
@@ -16,8 +19,9 @@ def actFunction(inp,i):
 	if type(inp) is bs4.element.Tag:
 		print ' '*i,"|"
 		print ' '*i,"+-"+inp.name
-		p = ''.join(getPath(inp)[::-1])
-		tree[p].append({inp.name:inp.string})
+		p = '.'.join(getPath(inp)[::-1])
+#		tree[p].append({inp.name:inp.string})
+		tree[str(p)] = inp.string
 		path[:]=[]
 
 def getPath(inp):
@@ -27,6 +31,10 @@ def getPath(inp):
 		path.append(inp.parent.name)
 		getPath(inp.parent)
 		return path
+
+def saveText(path,text):
+	for a in path:
+		tree[a]
 
 for a in soup.children:
 	recFunction(a,1)
