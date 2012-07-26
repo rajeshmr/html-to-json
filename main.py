@@ -19,9 +19,13 @@ def actFunction(inp,i):
 	if type(inp) is bs4.element.Tag:
 		print ' '*i,"|"
 		print ' '*i,"+-"+inp.name
-		p = '.'.join(getPath(inp)[::-1])
+		p = '.'.join(getPath(inp)[::-1])+".children"
 #		tree[p].append({inp.name:inp.string})
-		tree[str(p)] = inp.string
+		print path
+		try:
+			tree[p].append([{"name":inp.name,"children":[],"text":inp.string}])
+		except:
+			tree[p] = [{"name":inp.name,"children":[],"text":inp.string}]
 		path[:]=[]
 
 def getPath(inp):
