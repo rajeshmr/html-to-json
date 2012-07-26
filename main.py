@@ -4,10 +4,11 @@ import json
 from collections import defaultdict
 from dotdictify import dotdictify
 
-#tree=defaultdict(list)
-tree = dotdictify()
+tree={}
+#tree = dotdictify()
 soup = BeautifulSoup(open('test.html'))
 path=[]
+depth=0
 def recFunction(inp,i):
 	actFunction(inp,i)
 	if type(inp) is bs4.element.Tag:
@@ -17,15 +18,10 @@ def recFunction(inp,i):
 
 def actFunction(inp,i):
 	if type(inp) is bs4.element.Tag:
+		p = '.'.join(getPath(inp)[::-1])
 		print ' '*i,"|"
-		print ' '*i,"+-"+inp.name
-		p = '.'.join(getPath(inp)[::-1])+".children"
-#		tree[p].append({inp.name:inp.string})
-		print path
-		try:
-			tree[p].append([{"name":inp.name,"children":[],"text":inp.string}])
-		except:
-			tree[p] = [{"name":inp.name,"children":[],"text":inp.string}]
+		print ' '*i,"+-"+inp.name,p
+		buildTree(p,tree,inp)
 		path[:]=[]
 
 def getPath(inp):
@@ -36,11 +32,26 @@ def getPath(inp):
 		getPath(inp.parent)
 		return path
 
-def saveText(path,text):
-	for a in path:
-		tree[a]
+def buildTree(p,dic,inp):
+	if '.' in p:
+		k, rk = p.split('.',1)
+		try:
+			buildTree(rk,dic[k],inp)
+		except:
+			for item in dic['children']:
+				if item['name'] == rk:
+					item['children'].append({"name":inp.name,"children":[]})
+			#dic['children'].append({"name":inp.name,"children":[]})
+	else:
+		if len(path)<=1:
+			dic[p]={"name":inp.name,"children":[]}
+		else:
+			dic['children'].append({"name":inp.name,"children":[]})
 
+
+
+	
 for a in soup.children:
 	recFunction(a,1)
 
-print json.dumps(tree)
+print json.dumps(tree,  indent=4)
