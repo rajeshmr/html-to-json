@@ -2,55 +2,61 @@ import bs4
 from bs4 import BeautifulSoup
 import json
 from collections import defaultdict
-from dotdictify import dotdictify
 
-tree=[]
-#tree = dotdictify()
-soup = BeautifulSoup(open('flip.html'))
-path=[]
-depth=0
-def recFunction(inp,i):
-	actFunction(inp,i)
-	if type(inp) is bs4.element.Tag:
-		i+=1
-		for a in inp.children:
-			recFunction(a,i)
 
-def actFunction(inp,i):
-	if type(inp) is bs4.element.Tag:
-		p = '.'.join(getPath(inp)[::-1])
-#		print ' '*i,"|"
-#		print ' '*i,"+-"+inp.name,p
-		buildTree(p,tree,inp)
-		path[:]=[]
 
-def getPath(inp):
-	if inp.parent is None:
-		return path
-	else:
-		path.append(inp.parent.name)
-		getPath(inp.parent)
-		return path
 
-def buildTree(p,dic,inp):
-	if len(path)<=1:
-		tree.append({"name":"[document]","children":[{"name":inp.name,"children":[]}]})
-	else:
-		if '.' in p:
-			k,rk = p.split('.',1)
-			if isinstance(dic,list):
-				for item in dic:
-					if item['name'] == k:
-						buildTree(rk,item['children'],inp)
+class HtmlTree:
+	output = open("output.json","w")
+	tree=[]
+	path=[]
+	depth=0
+	
+	def recFunction(self,inp,i):
+		self.actFunction(inp,i)
+		if type(inp) is bs4.element.Tag:
+			i+=1
+			for a in inp.children:
+				self.recFunction(a,i)
+
+	def actFunction(self,inp,i):
+		if type(inp) is bs4.element.Tag:
+			p = '~'.join(self.getPath(inp)[::-1])
+			print ' '*i,"|"
+			print ' '*i,"+-"+inp.name,p
+			self.buildTree(p,self.tree,inp)
+			self.path[:]=[]
+
+	def getPath(self,inp):
+		if inp.parent is None:
+			return self.path
 		else:
-			for item in dic:
-				if item['name'] == p:
-					item['children'].append({"name":inp.name,"children":[]})
+			self.path.append(inp.parent.name)
+			self.getPath(inp.parent)
+			return self.path
 
+	def buildTree(self,p,dic,inp):
+		if len(self.path)<=1:
+			self.tree.append({"name":"[document]","children":[{"name":inp.name,"children":[]}]})
+		else:
+			if '~' in p:
+				k,rk = p.split('~',1)
+				item = (itm for itm in dic if itm['name'] == k).next()
+				self.buildTree(rk,item['children'],inp)
+			else:
+				item = (itm for itm in dic if itm['name'] == p).next()
+				item['children'].append({"name":inp.name,"children":[],"text":inp.string})
+				
+	def getTree(self):
+		return self.tree
 
-for a in soup.children:
-	recFunction(a,1)
+	def writeOutput(self):
+		self.output.write(json.dumps(h.getTree(),  indent=4))
 
-f = open("output.json","w")
-f.write(json.dumps(tree,  indent=4))
-print "end"
+if __name__ == '__main__':
+	h = HtmlTree()
+	soup = BeautifulSoup(open('flip.html'))
+	for a in soup.children:
+		h.recFunction(a,1)
+	h.writeOutput()
+	print "end"
