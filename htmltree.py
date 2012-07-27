@@ -3,9 +3,6 @@ from bs4 import BeautifulSoup
 import json
 from collections import defaultdict
 
-
-
-
 class HtmlTree:
 	output = open("output.json","w")
 	tree=[]
@@ -22,9 +19,8 @@ class HtmlTree:
 	def actFunction(self,inp,i):
 		if type(inp) is bs4.element.Tag:
 			p = '~'.join(self.getPath(inp)[::-1])
-			print ' '*i,"|"
-			print ' '*i,"+-"+inp.name,p
 			self.buildTree(p,self.tree,inp)
+			print len(self.path)
 			self.path[:]=[]
 
 	def getPath(self,inp):
@@ -45,10 +41,14 @@ class HtmlTree:
 				self.buildTree(rk,item['children'],inp)
 			else:
 				item = (itm for itm in dic if itm['name'] == p).next()
-				item['children'].append({"name":inp.name,"children":[],"text":inp.string})
-				
+				item['children'].append({"name":inp.name,
+										"children":[],
+										"text":inp.find(text=True).strip() if (inp.find(text=True) != None) else None,
+										"attrs":dict(inp.__dict__['attrs']),
+										})
+
 	def getTree(self):
-		return self.tree
+		return self.tree[0]
 
 	def writeOutput(self):
 		self.output.write(json.dumps(h.getTree(),  indent=4))
