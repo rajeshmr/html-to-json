@@ -8,6 +8,7 @@ class HtmlTree:
 	tree=[]
 	path=[]
 	depth=0
+	ignore=['script','style']
 	
 	def recFunction(self,inp,i):
 		self.actFunction(inp,i)
@@ -41,11 +42,14 @@ class HtmlTree:
 				self.buildTree(rk,item['children'],inp)
 			else:
 				item = (itm for itm in dic if itm['name'] == p).next()
-				item['children'].append({"name":inp.name,
-										"children":[],
-										"text":inp.find(text=True).strip() if (inp.find(text=True) != None) else None,
-										"attrs":dict(inp.__dict__['attrs']),
-										})
+				if inp.name not in self.ignore:
+					self.depth+=1
+					item['children'].append({"name":inp.name,
+											"children":[],
+											"text":inp.find(text=True).strip().lower() if (inp.find(text=True) != None) else None,
+											"attrs":dict(inp.__dict__['attrs']),
+											"depth":self.depth,
+											})
 
 	def getTree(self):
 		return self.tree[0]
@@ -55,7 +59,7 @@ class HtmlTree:
 
 if __name__ == '__main__':
 	h = HtmlTree()
-	soup = BeautifulSoup(open('flip.html'))
+	soup = BeautifulSoup(open('inputs/test.html'))
 	for a in soup.children:
 		h.recFunction(a,1)
 	h.writeOutput()
