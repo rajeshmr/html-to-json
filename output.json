@@ -10,6 +10,7 @@
                     "id": 3, 
                     "depth": 2, 
                     "attrs": {}, 
+                    "path": "[document] > html", 
                     "children": [
                         {
                             "name": "title", 
@@ -17,6 +18,7 @@
                             "id": 4, 
                             "depth": 3, 
                             "attrs": {}, 
+                            "path": "[document] > html > head", 
                             "children": [
                                 {
                                     "name": "b", 
@@ -24,6 +26,7 @@
                                     "id": 5, 
                                     "depth": 4, 
                                     "attrs": {}, 
+                                    "path": "[document] > html > head > title", 
                                     "children": []
                                 }
                             ]
@@ -36,6 +39,7 @@
                     "id": 6, 
                     "depth": 2, 
                     "attrs": {}, 
+                    "path": "[document] > html", 
                     "children": [
                         {
                             "name": "div", 
@@ -45,6 +49,7 @@
                             "attrs": {
                                 "id": "content"
                             }, 
+                            "path": "[document] > html > body", 
                             "children": [
                                 {
                                     "name": "div", 
@@ -58,6 +63,7 @@
                                             "span2"
                                         ]
                                     }, 
+                                    "path": "[document] > html > body > div", 
                                     "children": [
                                         {
                                             "name": "a", 
@@ -67,6 +73,7 @@
                                             "attrs": {
                                                 "href": "#"
                                             }, 
+                                            "path": "[document] > html > body > div > div", 
                                             "children": []
                                         }, 
                                         {
@@ -75,6 +82,7 @@
                                             "id": 13, 
                                             "depth": 5, 
                                             "attrs": {}, 
+                                            "path": "[document] > html > body > div > div", 
                                             "children": [
                                                 {
                                                     "name": "thead", 
@@ -82,6 +90,7 @@
                                                     "id": 14, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > table", 
                                                     "children": [
                                                         {
                                                             "name": "tr", 
@@ -89,6 +98,7 @@
                                                             "id": 15, 
                                                             "depth": 7, 
                                                             "attrs": {}, 
+                                                            "path": "[document] > html > body > div > div > table > thead", 
                                                             "children": [
                                                                 {
                                                                     "name": "th", 
@@ -96,6 +106,7 @@
                                                                     "id": 16, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > thead > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -104,6 +115,7 @@
                                                                     "id": 17, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > thead > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -112,6 +124,7 @@
                                                                     "id": 18, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > thead > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -120,6 +133,7 @@
                                                                     "id": 19, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > thead > tr", 
                                                                     "children": []
                                                                 }
                                                             ]
@@ -132,6 +146,7 @@
                                                     "id": 20, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > table", 
                                                     "children": [
                                                         {
                                                             "name": "tr", 
@@ -139,6 +154,7 @@
                                                             "id": 21, 
                                                             "depth": 7, 
                                                             "attrs": {}, 
+                                                            "path": "[document] > html > body > div > div > table > tbody", 
                                                             "children": [
                                                                 {
                                                                     "name": "td", 
@@ -146,6 +162,7 @@
                                                                     "id": 22, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -154,6 +171,7 @@
                                                                     "id": 23, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -162,6 +180,7 @@
                                                                     "id": 24, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -170,6 +189,7 @@
                                                                     "id": 25, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }
                                                             ]
@@ -180,6 +200,7 @@
                                                             "id": 26, 
                                                             "depth": 7, 
                                                             "attrs": {}, 
+                                                            "path": "[document] > html > body > div > div > table > tbody", 
                                                             "children": [
                                                                 {
                                                                     "name": "td", 
@@ -187,6 +208,7 @@
                                                                     "id": 27, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -195,6 +217,7 @@
                                                                     "id": 28, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -203,6 +226,7 @@
                                                                     "id": 29, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -211,6 +235,7 @@
                                                                     "id": 30, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }
                                                             ]
@@ -221,6 +246,7 @@
                                                             "id": 31, 
                                                             "depth": 7, 
                                                             "attrs": {}, 
+                                                            "path": "[document] > html > body > div > div > table > tbody", 
                                                             "children": [
                                                                 {
                                                                     "name": "td", 
@@ -228,6 +254,7 @@
                                                                     "id": 32, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -236,6 +263,7 @@
                                                                     "id": 33, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -244,6 +272,7 @@
                                                                     "id": 34, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -252,6 +281,7 @@
                                                                     "id": 35, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }
                                                             ]
@@ -262,6 +292,7 @@
                                                             "id": 36, 
                                                             "depth": 7, 
                                                             "attrs": {}, 
+                                                            "path": "[document] > html > body > div > div > table > tbody", 
                                                             "children": [
                                                                 {
                                                                     "name": "td", 
@@ -269,6 +300,7 @@
                                                                     "id": 37, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -277,6 +309,7 @@
                                                                     "id": 38, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -285,6 +318,7 @@
                                                                     "id": 39, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -293,6 +327,7 @@
                                                                     "id": 40, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }
                                                             ]
@@ -303,6 +338,7 @@
                                                             "id": 41, 
                                                             "depth": 7, 
                                                             "attrs": {}, 
+                                                            "path": "[document] > html > body > div > div > table > tbody", 
                                                             "children": [
                                                                 {
                                                                     "name": "td", 
@@ -310,6 +346,7 @@
                                                                     "id": 42, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -318,6 +355,7 @@
                                                                     "id": 43, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -326,6 +364,7 @@
                                                                     "id": 44, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }, 
                                                                 {
@@ -334,6 +373,7 @@
                                                                     "id": 45, 
                                                                     "depth": 8, 
                                                                     "attrs": {}, 
+                                                                    "path": "[document] > html > body > div > div > table > tbody > tr", 
                                                                     "children": []
                                                                 }
                                                             ]
@@ -348,6 +388,7 @@
                                             "id": 46, 
                                             "depth": 5, 
                                             "attrs": {}, 
+                                            "path": "[document] > html > body > div > div", 
                                             "children": [
                                                 {
                                                     "name": "li", 
@@ -355,6 +396,7 @@
                                                     "id": 47, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > ul", 
                                                     "children": []
                                                 }, 
                                                 {
@@ -363,6 +405,7 @@
                                                     "id": 48, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > ul", 
                                                     "children": []
                                                 }, 
                                                 {
@@ -371,6 +414,7 @@
                                                     "id": 49, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > ul", 
                                                     "children": []
                                                 }, 
                                                 {
@@ -379,6 +423,7 @@
                                                     "id": 50, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > ul", 
                                                     "children": []
                                                 }, 
                                                 {
@@ -387,6 +432,7 @@
                                                     "id": 51, 
                                                     "depth": 6, 
                                                     "attrs": {}, 
+                                                    "path": "[document] > html > body > div > div > ul", 
                                                     "children": []
                                                 }
                                             ]
@@ -399,6 +445,7 @@
                                     "id": 10, 
                                     "depth": 4, 
                                     "attrs": {}, 
+                                    "path": "[document] > html > body > div", 
                                     "children": []
                                 }, 
                                 {
@@ -413,6 +460,7 @@
                                             "span2"
                                         ]
                                     }, 
+                                    "path": "[document] > html > body > div", 
                                     "children": []
                                 }, 
                                 {
@@ -427,6 +475,7 @@
                                             "span2"
                                         ]
                                     }, 
+                                    "path": "[document] > html > body > div", 
                                     "children": []
                                 }, 
                                 {
@@ -439,6 +488,7 @@
                                             "clear"
                                         ]
                                     }, 
+                                    "path": "[document] > html > body > div", 
                                     "children": []
                                 }, 
                                 {
@@ -453,6 +503,7 @@
                                             "span2"
                                         ]
                                     }, 
+                                    "path": "[document] > html > body > div", 
                                     "children": []
                                 }
                             ]

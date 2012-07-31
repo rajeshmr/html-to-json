@@ -1,4 +1,5 @@
 import re
+import shlex
 
 class Query:
 	def __init__(self):
@@ -13,7 +14,8 @@ class Query:
 			"td":	['column',"element"],
 			"tr":	['row']
 			}
-		self.howMany = re.compile("([0-9]+)(?:st|nd|rd|th)?")
+		self.whichOne = re.compile("([0-9]+)[st|nd|rd|th]")
+		self.howMany = re.compile("([0-9]+)$")
 		self.direction = {
 			"up":['above','up','before'],
 			"down":['below','down','after']
@@ -23,7 +25,7 @@ class Query:
 
 	def buildQuery(self,query):
 		self.trans ={}
-		qTokens=query.split(' ')
+		qTokens=shlex.split(query)
 		print qTokens
 		for token in qTokens:
 			for tag,pos in self.selectors.iteritems():
@@ -32,6 +34,9 @@ class Query:
 			if self.howMany.match(token):
 				g = self.howMany.match(token)
 				self.trans.update({"howMany":g.group(1)})
+			if self.whichOne.match(token):
+				w=self.whichOne.match(token)
+				self.trans.update({"whichOne":w.group(1)})
 			for d,p in self.direction.iteritems():
 				if token in p:
 					self.trans.update({"direction":d})
@@ -47,7 +52,7 @@ class Query:
 
 if __name__ == '__main__':
 	test =[
-	'"obama"'
+	'"obama"',#
 	'3rd "obama"',
 	'3 "obama"',
 	'4 "tetris" link',
@@ -67,4 +72,4 @@ if __name__ == '__main__':
 	q=Query()
 	for item in test:
 		q.buildQuery(item)
-		print q.getTrans()
+		print item,q.getTrans()

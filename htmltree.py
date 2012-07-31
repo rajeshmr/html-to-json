@@ -53,14 +53,15 @@ class HtmlTree:
 											"children":[],
 											"text":inp.find(text=True).strip().lower() if (inp.find(text=True) != None) else None,
 											"attrs":dict(inp.__dict__['attrs']),
-											"depth":i
+											"depth":i,
+											"path":' > '.join(self.path[::-1])
 										})
 
 	def getTree(self):
 		return self.tree[0]
 
 	def writeOutput(self):
-		self.output.write(json.dumps(h.getTree(),  indent=4))
+		self.output.write(json.dumps(h.getTree(), indent=4))
 
 if __name__ == '__main__':
 	h = HtmlTree()
