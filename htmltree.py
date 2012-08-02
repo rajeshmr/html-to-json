@@ -65,7 +65,7 @@ class HtmlTree:
 
 if __name__ == '__main__':
 	h = HtmlTree()
-	soup = BeautifulSoup(open('inputs/test.html'))
+	soup = BeautifulSoup(open('inputs/flip.html'))
 	for a in soup.children:
 		h.recFunction(a,1)
 	h.writeOutput()
